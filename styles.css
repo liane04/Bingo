@@ -5,40 +5,39 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
+    padding: 20px;
     margin: 0;
 }
 
 h1 {
     color: white;
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 15px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .board {
     display: grid;
-    grid-template-columns: repeat(5, 120px);
-    grid-template-rows: repeat(5, 120px);
-    gap: 10px;
-    background: rgba(255,255,255,0.9);
-    padding: 20px;
-    border-radius: 12px;
+    width: 100%;
+    max-width: 600px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
 }
 
 .cell {
     background: white;
+    aspect-ratio: 1 / 1;       /* mantém cada célula em quadrado */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 5px;
+    padding: 4px;
     cursor: pointer;
     border: 2px solid #ccc;
-    border-radius: 8px;
+    border-radius: 6px;
     user-select: none;
+    font-size: 0.8rem;         /* texto menor em ecrãs pequenos */
 }
 
 .cell.selected {
@@ -49,13 +48,13 @@ h1 {
 
 #bingoMsg {
     position: fixed;
-    top: 20px;
+    top: 10px;
     background: #ffeb3b;
     color: #333;
-    padding: 10px 20px;
-    border-radius: 8px;
+    padding: 8px 16px;
+    border-radius: 6px;
     font-weight: bold;
     display: none;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
