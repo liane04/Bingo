@@ -6,6 +6,7 @@ const phrases = [
     "Ver três pessoas famosas",
     "Fila gigante para os brindes",
     "Pessoa a \"gravar\", sem gravar",
+    "Ver 3 pessoas famosas",
     "Ter muito calor",
     "Alguém com muito glitter na cara",
     "Grupo com outfits iguais",
