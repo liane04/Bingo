@@ -40,6 +40,32 @@ phrases.forEach((text, idx) => {
     boardEl.appendChild(cell);
 });
 
+window.addEventListener('load', () => {
+  // 1) constroi as células (o teu código atual)
+  const phrases = [ /* … */ ];
+    const boardEl = document.getElementById('board');
+    const bingoMsg = document.getElementById('bingoMsg');
+
+    phrases.forEach((text, idx) => {
+    const cell = document.createElement('div');
+    cell.classList.add('cell');
+    cell.textContent = text;
+    cell.dataset.index = idx;
+    cell.addEventListener('click', () => toggleCell(cell));
+    boardEl.appendChild(cell);
+    });
+
+  // 2) calcula scale
+    const parentWidth = boardEl.parentElement.clientWidth;
+    const boardWidth  = boardEl.scrollWidth; 
+    const scale = Math.min(1, parentWidth / boardWidth);
+    boardEl.style.transform = `scale(${scale})`;
+});
+
+// o resto do teu código permanece igual:
+function toggleCell(cell) { /* … */ }
+function checkBingo()    { /* … */ }
+
 function toggleCell(cell) {
     cell.classList.toggle('selected');
     checkBingo();
