@@ -5,14 +5,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
     margin: 0;
 }
 
 h1 {
     color: white;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-bottom: 15px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
@@ -20,17 +20,14 @@ h1 {
 .board {
     display: grid;
     width: 100%;
-    max-width: 600px;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 8px;
-    /* permite escalar */
-    transform-origin: top center;
-    transition: transform 0.2s ease-out;
+    max-width: 600px;               /* para desktops */
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 6px;
 }
 
 .cell {
     background: white;
-    aspect-ratio: 1 / 1;       /* mantém cada célula em quadrado */
+    aspect-ratio: 1 / 1;            /* mantém quadrado */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,7 +37,8 @@ h1 {
     border: 2px solid #ccc;
     border-radius: 6px;
     user-select: none;
-    font-size: 0.8rem;         /* texto menor em ecrãs pequenos */
+    font-size: 0.75rem;             /* texto adaptável */
+    line-height: 1.1;
 }
 
 .cell.selected {
@@ -60,4 +58,6 @@ h1 {
     display: none;
     font-size: 1rem;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    z-index: 10;
 }
+
